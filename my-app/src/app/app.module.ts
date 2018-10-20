@@ -1,6 +1,6 @@
+import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
 
@@ -8,9 +8,10 @@ import { MyComponentComponent } from './my-component/my-component.component';
   declarations: [
     AppComponent,
     MyComponentComponent
-  ],
+    ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CursosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
