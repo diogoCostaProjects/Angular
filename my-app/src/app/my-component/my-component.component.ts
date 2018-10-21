@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyComponentComponent implements OnInit {
 
-  texto = "Teste de Binding";
-  
+  texto: String = 'Teste de Binding';
+
   constructor() {}
 
   ngOnInit() {
