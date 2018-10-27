@@ -1,0 +1,63 @@
+<section class ="property-binding">
+
+  <article>
+    <h3>Interpolation/Interpolação </h3>
+    <p>String renderizada com interpolação {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>O resultado de 1 + 1 não é: {{ getValor() }}</p>
+    <p>Curso de Angular e gosto do curso: {{cursoAngular && getCurtirCurso() }}</p>
+  </article>
+
+  <article>
+  <!--  <h3>Property binding</h3>
+    <img src="{{urlImagem}}" alt="" ><br>
+
+    <img [src]="urlImagem" alt="" > desta maneira pega a propriedade SRC do image e deixa controlável pelo Angular, seria o mesmo que o ng-src do AngularJS
+  -->
+
+    <div>
+        Selecione uma classe
+
+        <select #classe (change)="0">
+           <option value="alert-success"> Sucesso</option>
+           <option value="alert-info"> Info</option>
+           <option value="alert-warning"> Alerta</option>
+           <option value="alert-danger"> Erro</option>
+        </select>
+        <br><br>
+
+        <div class="alert {{classe.value}}" role="alert">
+           {{ classe.value }}
+        </div>
+        <br>
+        <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+        <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+        <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+        <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+
+        <div class="alert alert-danger" role="alert" [style.display]="classe.value =='alert-danger' ? 'block' : 'none'">Este texto aparece somente em caso de erro</div>
+    </div>
+  </article>
+</section>
+
+
+<!--
+    Anotações ...
+
+    - Com '#' o Angular define uma variável local no template, nesse caso o #classe, que pega o valor da opção selecionada no select
+
+    - através de '[]' fica o atributo do template usado no binding do componente, pois desse modo pode se acessar dados do script do componente,
+    deixando o angular linkar os dois
+
+    - O trexo  classe.value =='alert-danger' ? 'block' : 'none' faz uma operação de if ternário, separando as condicionais por ? e :
+    como se fosse:
+    if (classe.value == 'alert-danger'){
+         display.block;
+    }else {
+         display.none;
+    }
+
+
+
+
+-->
